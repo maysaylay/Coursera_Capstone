@@ -67,18 +67,20 @@ This analysis is valuable for:
 ## 📁 Repository Structure
 
 ```
-├── Battle_of_Cities.ipynb          # Main analysis notebook (START HERE)
-├── Coursera_Capstone_IBM_datascience.ipynb  # Alternative analysis notebook
-├── Finals_wk3_complete.ipynb       # Week 3 complete assignment
-├── Finals_wk3_clustering.ipynb     # Clustering analysis
-├── Finals_wk3_part1.ipynb          # Data collection
-├── BeautifulSoup.ipynb             # Web scraping practice
-├── intro_business_problem.ipynb    # Business problem statement
-├── data_section.ipynb              # Data description
+├── Battle_of_Cities.ipynb              # Main analysis notebook ⭐ START HERE
+├── Coursera_Capstone_IBM_datascience.ipynb  # Data collection notebook
+├── Finals_wk3_complete.ipynb           # Week 3 complete assignment
+├── Finals_wk3_clustering.ipynb         # Clustering analysis
+├── Finals_wk3_part1.ipynb              # Data collection
+├── BeautifulSoup.ipynb                 # Web scraping practice
+├── intro_business_problem.ipynb        # Business problem statement
+├── data_section.ipynb                  # Data description
 │
-├── CAPSTONE_REPORT_COURSERA.pdf    # Final project report
-├── IBM_DATA_SCIENCE.pdf            # Presentation slides (PDF)
-├── IBM_DATA_SCIENCE.key            # Presentation slides (Keynote)
+├── CAPSTONE_REPORT_COURSERA.pdf        # Final project report
+├── IBM_DATA_SCIENCE.pdf                # Presentation slides (PDF)
+├── IBM_DATA_SCIENCE.key                # Presentation slides (Keynote)
+│
+├── requirements.txt                    # Python dependencies
 │
 ├── Data Files:
 │   ├── manhattan_neighbourhoods.csv        # Manhattan neighborhood data
@@ -104,7 +106,7 @@ This analysis is valuable for:
 | **Programming** | Python 3 |
 | **Data Manipulation** | Pandas, NumPy |
 | **Machine Learning** | Scikit-learn (K-Means Clustering) |
-| **Visualization** | Matplotlib, Folium (Interactive Maps) |
+| **Visualization** | Matplotlib, Folium (Interactive Maps), WordCloud |
 | **Web Scraping** | BeautifulSoup, Requests |
 | **APIs** | Foursquare Location API |
 | **Geocoding** | Geopy |
@@ -114,14 +116,64 @@ This analysis is valuable for:
 ## 🚀 Getting Started
 
 ### Prerequisites
+
+**Option 1: Using pip**
 ```bash
-pip install pandas numpy scikit-learn matplotlib folium beautifulsoup4 requests geopy
+pip install -r requirements.txt
+```
+
+**Option 2: Manual installation**
+```bash
+pip install pandas numpy scikit-learn folium geopy matplotlib wordcloud Pillow requests
 ```
 
 ### Run the Analysis
+
 1. Clone this repository
-2. Open `Battle_of_Cities.ipynb` in Jupyter Notebook
-3. Run all cells to reproduce the analysis
+```bash
+git clone https://github.com/maysaylay/Coursera_Capstone.git
+cd Coursera_Capstone
+```
+
+2. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+3. Open the main notebook
+```bash
+jupyter notebook Battle_of_Cities.ipynb
+```
+
+4. Run all cells to reproduce the analysis
+
+---
+
+## ⚠️ Reproducibility Notes
+
+### ✅ What WILL Work
+The main analysis notebook (`Battle_of_Cities.ipynb`) uses **pre-processed CSV files** included in this repository, so clustering and visualization can be run without API access.
+
+### ⚠️ What May Need Updates
+
+**1. Foursquare API Credentials**
+The data collection notebooks contain API credentials that may be expired. To re-collect data:
+- Create a [Foursquare developer account](https://developer.foursquare.com/)
+- Generate new API credentials
+- Replace the credentials in the notebooks
+
+**2. Deprecated Pandas Syntax**
+Some code uses old pandas syntax:
+```python
+# Old (may show warning):
+df.drop('column', 1)
+
+# New (recommended):
+df.drop('column', axis=1)
+```
+
+**3. Python Version**
+Developed on Python 3.8. Should work on Python 3.7+.
 
 ---
 
