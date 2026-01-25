@@ -124,7 +124,7 @@ pip install -r requirements.txt
 
 **Option 2: Manual installation**
 ```bash
-pip install pandas numpy scikit-learn folium geopy matplotlib wordcloud Pillow requests
+pip install pandas numpy scikit-learn folium geopy matplotlib wordcloud Pillow requests lxml html5lib beautifulsoup4
 ```
 
 ### Run the Analysis
@@ -154,26 +154,15 @@ jupyter notebook Battle_of_Cities.ipynb
 ### ✅ What WILL Work
 The main analysis notebook (`Battle_of_Cities.ipynb`) uses **pre-processed CSV files** included in this repository, so clustering and visualization can be run without API access.
 
-### ⚠️ What May Need Updates
-
-**1. Foursquare API Credentials**
-The data collection notebooks contain API credentials that may be expired. To re-collect data:
-- Create a [Foursquare developer account](https://developer.foursquare.com/)
-- Generate new API credentials
-- Replace the credentials in the notebooks
-
-**2. Deprecated Pandas Syntax**
-Some code uses old pandas syntax:
-```python
-# Old (may show warning):
-df.drop('column', 1)
-
-# New (recommended):
-df.drop('column', axis=1)
-```
-
-**3. Python Version**
-Developed on Python 3.8. Should work on Python 3.7+.
+### ⚠️ Foursquare API
+The data collection notebooks require Foursquare API credentials. To re-collect data:
+1. Create a [Foursquare developer account](https://developer.foursquare.com/)
+2. Generate new API credentials
+3. Replace the placeholder credentials in the notebooks:
+   ```python
+   CLIENT_ID = 'YOUR_FOURSQUARE_CLIENT_ID'
+   CLIENT_SECRET = 'YOUR_FOURSQUARE_CLIENT_SECRET'
+   ```
 
 ---
 
